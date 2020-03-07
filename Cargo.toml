@@ -1,0 +1,64 @@
+[package]
+name = "lunem"
+version = "0.1.0"
+authors = ["Rick Duff <rgduff@gmail.com>"]
+edition = "2018"
+publish = false
+
+description = "Mining status server and client for LunEm Computers"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "liblunem"
+path = "src/lib/lib.rs"
+
+[[bin]]
+name = "lunemd"
+path = "src/lunemd/main.rs"
+
+[[bin]]
+name = "lunem"
+path = "src/lunem/main.rs"
+
+[dependencies]
+log = "^0.4.8"
+simplelog = "^0.7.0"
+clap = "2.33.0"
+directories = "2.0"
+pancurses = { version = "0.16" }
+actix-web = "2.0"
+actix-rt = "1.0"
+listenfd = "0.3"
+
+[badges]
+
+# Appveyor: `repository` is required. `branch` is optional; default is `master`
+# `service` is optional; valid values are `github` (default), `bitbucket`, and
+# `gitlab`; `id` is optional; you can specify the appveyor project id if you
+# want to use that instead. `project_name` is optional; use when the repository
+# name differs from the appveyor project name.
+travis-ci = { repository = "darval/lunem", branch = "development" }
+
+# Maintenance: `status` is required. Available options are:
+# - `actively-developed`: New features are being added and bugs are being fixed.
+# - `passively-maintained`: There are no plans for new features, but the maintainer intends to
+#   respond to issues that get filed.
+# - `as-is`: The crate is feature complete, the maintainer does not intend to continue working on
+#   it or providing support, but it works for the purposes it was designed for.
+# - `experimental`: The author wants to share it with the community but is not intending to meet
+#   anyone's particular use case.
+# - `looking-for-maintainer`: The current maintainer would like to transfer the crate to someone
+#   else.
+# - `deprecated`: The maintainer does not recommend using this crate (the description of the crate
+#   can describe why, there could be a better solution available or there could be problems with
+#   the crate that the author does not want to fix).
+# - `none`: Displays no badge on crates.io, since the maintainer has not chosen to specify
+#   their intentions, potential crate users will need to investigate on their own.
+maintenance = { status = "experimental" }
+# [[test]]
+# name = "cucumber"
+# harness = false # Allows Cucumber to print output instead of libtest
+
+# [dev-dependencies]
+# cucumber = { package = "cucumber_rust", version = "^0.6.2" } 
