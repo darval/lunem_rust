@@ -30,6 +30,9 @@ pancurses = { version = "0.16" }
 actix-web = "2.0"
 actix-rt = "1.0"
 listenfd = "0.3"
+lazy_static = "1.4.0"
+config = "0.9"
+notify = "4.0.15"
 
 [badges]
 
