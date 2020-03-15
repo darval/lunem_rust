@@ -92,8 +92,8 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .route("/", web::get().to(index))
             .route("/api/status", web::get().to(api_status))
-    });
-    server.workers(4);
+        })
+        .workers(4);
     
     let cd = crate::CONFIGDATA.read().unwrap().clone();
     let ip_port = format!("{}:{}", 
